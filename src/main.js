@@ -14,16 +14,14 @@ export const eventBus = new Vue({
     manga: [],
   }),
   methods: {
-    requestAnime(id) {
+    requestAnime (id) {
       AnimeService.getAnime(id).then(response => {
-        console.log(response);
         this.anime = response.data.data
         this.$emit('request-anime');
       })
     },
-    requestManga(id) {
+    requestManga (id) {
       MangaService.getManga(id).then(response => {
-        console.log(response);
         this.manga = response.data.data
         this.$emit('request-manga');
       })
