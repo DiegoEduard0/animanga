@@ -10,48 +10,48 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/animanga',
+    path: '/',
     redirect: 'animes'
   },
   {
-    path: '/animanga/animes',
+    path: '/animes',
     name: 'animes',
     component: HomeView,
   },
   {
-    path: '/animanga/animes/:category/:cat/page/:pag',
+    path: '/animes/:category/:cat/page/:pag',
     name: 'animes-cat',
     component: HomeView,
   },
   {
-    path: '/animanga/animes/anime/:id/',
+    path: '/animes/anime/:id/',
     name: 'anime',
     component: AnimeView
   },
   {
-    path: '/animanga/mangas',
+    path: '/mangas',
     name: 'mangas',
     component: HomeView,
   },
   {
-    path: '/animanga/mangas/:category/:cat/page/:pag',
+    path: '/mangas/:category/:cat/page/:pag',
     name: 'mangas-cat',
     component: HomeView,
   },
   {
-    path: '/animanga/mangas/manga/:id',
+    path: '/mangas/manga/:id',
     name: 'manga',
     component: MangaView
   },
   {
-    path: '/animanga/sobre',
+    path: '/sobre',
     name: 'sobre',
     component: AboutView
   },
 ]
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
