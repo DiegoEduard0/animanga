@@ -10,41 +10,41 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/animanga',
     redirect: 'animes'
   },
   {
-    path: '/animes',
+    path: '/animanga/animes',
     name: 'animes',
     component: HomeView,
   },
   {
-    path: '/animes/:category/:cat/page/:pag',
+    path: '/animanga/animes/:category/:cat/page/:pag',
     name: 'animes-cat',
     component: HomeView,
   },
   {
-    path: '/animes/anime/:id/',
+    path: '/animanga/animes/anime/:id/',
     name: 'anime',
     component: AnimeView
   },
   {
-    path: '/mangas',
+    path: '/animanga/mangas',
     name: 'mangas',
     component: HomeView,
   },
   {
-    path: '/mangas/:category/:cat/page/:pag',
+    path: '/animanga/mangas/:category/:cat/page/:pag',
     name: 'mangas-cat',
     component: HomeView,
   },
   {
-    path: '/mangas/manga/:id',
+    path: '/animanga/mangas/manga/:id',
     name: 'manga',
     component: MangaView
   },
   {
-    path: '/sobre',
+    path: '/animanga/sobre',
     name: 'sobre',
     component: AboutView
   },
