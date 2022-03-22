@@ -5,24 +5,39 @@
     <p>No Backend foi utilizado a <a href="#">API Jikan</a> para fornecer os dados.</p>
     <p>Gostou do meu trabalho? Me mande um feedback, ele será de grande ajuda para mim:</p>
     <v-btn
-      v-for="icon in icons"
-      :key="icon"
+      v-for="(link, indice) in links"
+      :key="indice"
       class="mx-4 "
       icon
     >
-      <v-icon size="24px">
-        {{ icon }}
-      </v-icon>
+      <a
+        :href="link.link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <v-icon size="24px">
+          {{ link.icon }}
+        </v-icon>
+      </a>
     </v-btn>
   </div>
 </template>
 <script>
 export default {
   data: () => ({
-    icons: [
-      'mdi-linkedin',
-      'mdi-github',
-      'mdi-whatsapp',
+    links: [
+      {
+        link: 'https://www.linkedin.com/in/diego-eduardo-link/',
+        icon: 'mdi-linkedin'
+      },
+      {
+        link: 'https://github.com/DiegoEduard0/animanga',
+        icon: 'mdi-github'
+      },
+      {
+        link: 'https://api.whatsapp.com/send?phone=5518991070115',
+        icon: 'mdi-whatsapp'
+      }
     ],
 
   }),
