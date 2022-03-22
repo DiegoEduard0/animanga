@@ -108,16 +108,22 @@
       padless
       class="mt-5"
     >
-      <v-card-text class="text-center ">
+      <v-card-text class="text-center footer">
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(link, indice) in links"
+          :key="indice"
           class="mx-4 "
           icon
         >
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
+          <a
+            :href="link.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <v-icon size="24px">
+              {{ link.icon }}
+            </v-icon>
+          </a>
         </v-btn>
       </v-card-text>
 
@@ -141,10 +147,19 @@ export default {
     anmCat: [['Suspense/Thriller', 41], ['Seinen', 42], ['Josei', 43], ['Award Winning', 46], ['Gourmet', 47], ['Work Life', 48], ['Erotica', 49]],
     manCat: [['Seinen', 41], ['Josei', 42], ['Doujinshi', 43], ['Gender Bender', 44], ['Suspense/Thriller', 45], ['Award Winning', 46], ['Gourmet', 47], ['Work Life', 48], ['Erotica', 49]],
     text: '',
-    icons: [
-      'mdi-linkedin',
-      'mdi-github',
-      'mdi-whatsapp',
+    links: [
+      {
+        link: 'https://www.linkedin.com/in/diego-eduardo-link/',
+        icon: 'mdi-linkedin'
+      },
+      {
+        link: 'https://github.com/DiegoEduard0/animanga',
+        icon: 'mdi-github'
+      },
+      {
+        link: 'https://api.whatsapp.com/send?phone=5518991070115',
+        icon: 'mdi-whatsapp'
+      }
     ],
 
   }),
@@ -197,6 +212,11 @@ export default {
 .categoria {
   max-height: 49vh !important;
   overflow-y: auto;
+}
+
+.footer a {
+  color: rgb(255, 127, 9);
+  text-decoration: none;
 }
 </style>
 
